@@ -36,7 +36,7 @@ This way, I understand what I've built and learn a lot of things from bugs and I
 - During this project, I learned how to maintain the state of the entire application in a single centralized store. This makes it easier to manage and control the state of the application.
 - Also, I can share state between components without passing props, and React-Redux helps me to organize my code in a more structured way.
 
-## 💻 Demo:
+### 💻 Demo: https://itsabdullah2.github.io/shopping_cart_react_redux/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
