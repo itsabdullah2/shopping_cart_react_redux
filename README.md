@@ -1,4 +1,42 @@
-# Getting Started with Create React App
+## 🛒Shopping Cart
+
+A Shopping Cart with React Redux and JavaScript. I built a side project for learning how to add products to the cart and knew how this process works in e-commerce websites. The app is responsive. So, I focused on the functionalities side and responsive side.
+
+## 📦 Technologies
+
+- React-Redux
+- Redux
+- React
+- JavaScript
+- TailwindCSS
+- React Router
+- gh-pages (For deploying the project on GitHub)
+- daisyui
+
+## 🎯 Features
+
+- When you add the product in the cart you get a notification.
+- When you add the same product twice to the cart the product will increase by one.
+- In the cart page you can delete the product, Increase, and decrease the product and for sure the price changes every time you change the quantity, and the total cost changes.
+- You will remove the product if the quantity equal to zero.
+- You can remove the product from cart and when you remove it you will get a notification.
+
+## 👩‍🍳 The Process
+
+I started to search for the idea and how I could implement it I used ChatGPT, Stack Overflow, and MDN, and I watched some YouTube videos to get more information.
+
+Next, I typed all the Ideas about the project and I typed them as steps. And, I started to implement the idea and write code. (I usually write code after organizing the ideas of any project I'll work on and after searching if there are any updates in the technologies that I'll use).
+
+Finally, I tested the functionalities and the responsiveness of the project.
+
+This way, I understand what I've built and learn a lot of things from bugs and I expand my knowledge.
+
+## 📚 What I Learned
+
+- During this project, I learned how to maintain the state of the entire application in a single centralized store. This makes it easier to manage and control the state of the application.
+- Also, I can share state between components without passing props, and React-Redux helps me to organize my code in a more structured way.
+
+## 💻 Demo:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

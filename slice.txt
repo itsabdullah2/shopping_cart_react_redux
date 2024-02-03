@@ -1,0 +1,153 @@
+import { createSlice } from "@reduxjs/toolkit";
+import { nextId } from "./utils"; // Assuming you have a utility function for generating unique IDs
+
+const cartSlice = createSlice({
+  name: "cart",
+  initialState: [],
+  reducers: {
+    addToCart: (state, action) => {
+      const product = state.find((item) => item.productId === action.payload.id);
+      if (product) {
+        // If product is already in the cart, increase quantity
+        product.quantity += 1;
+      } else {
+        // If product is not in the cart, add it with quantity 1
+        state.push({
+          ...action.payload,
+          id: nextId(state),
+          quantity: 1,
+          productId: action.payload.id
+        });
+      }
+    },
+    removeFromCart: (state, action) => {
+      return state.filter((item) => item.id !== action.payload);
+    },
+    increaseQuantity: (state, action) => {
+      const product = state.find((item) => item.id === action.payload);
+      if (product) {
+        product.quantity += 1;
+      }
+    },
+    decreaseQuantity: (state, action) => {
+      const product = state.find((item) => item.id === action.payload);
+      if (product && product.quantity > 1) {
+        product.quantity -= 1;
+      }
+    },
+  },
+});
+
+export const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } = cartSlice.actions;
+export const cartReducer = cartSlice.reducer;
+
+
+// === ===
+import { createSlice } from "@reduxjs/toolkit";
+import { nextId } from "./utils"; // Assuming you have a utility function for generating unique IDs
+
+const productSlice = createSlice({
+  name: "products",
+  initialState: {
+    products: [],
+  },
+  reducers: {
+    addProduct: (state, action) => {
+      state.products.push({
+        id: nextId(state.products),
+        ...action.payload,
+        price: parseFloat(action.payload.price),
+        quantity: parseInt(action.payload.quantity)
+      });
+    },
+    increaseQuantity: (state, action) => {
+      const { productId } = action.payload;
+      const product = state.products.find((item) => item.id === productId);
+      if (product) {
+        product.quantity += 1;
+      }
+    },
+    decreaseQuantity: (state, action) => {
+      const { productId } = action.payload;
+      const product = state.products.find((item) => item.id === productId);
+      if (product && product.quantity > 0) {
+        product.quantity -= 1;
+      }
+    },
+    addToCart: (state, action) => {
+      const { productId } = action.payload;
+      const product = state.products.find((item) => item.id === productId);
+      if (product) {
+        // Assuming you have a separate cart state, push the product into the cart
+        // You need to define your cartSlice separately for this to work
+        // state.cart.push({ ...product });
+      }
+    },
+  },
+});
+
+export const { addProduct, increaseQuantity, decreaseQuantity, addToCart } = productSlice.actions;
+export default productSlice.reducer;
+// ===================================
+<div className="navbar bg-base-100">
+  <div className="navbar-start">
+    <div className="dropdown">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+      </div>
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><CustomLink
+            to="/"
+            children="Home"
+            className="btn btn-ghost text-xl text-white text-base"
+          /></li>
+        <li><CustomLink
+            to="/"
+            children="Cart"
+            className="btn btn-ghost text-xl text-white text-base"
+          /></li>
+      </ul>
+    </div>
+  </div>
+  <div className="navbar-center">
+   <CustomLink
+            to="/"
+            children="Shopping Cart"
+            className="btn btn-ghost text-xl text-white text-base"
+          />
+  </div>
+  <div className="navbar-end">
+    <button className="btn btn-ghost btn-circle">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+    </button>
+    <button className="btn btn-ghost btn-circle">
+     <CustomLink to="/cart" className="text-white">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle"
+              >
+                <div className="indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                  <span className="badge badge-sm indicator-item">
+                    {cartItemNo}
+                  </span>
+                </div>
+              </div>
+            </CustomLink>
+    </button>
+  </div>
+</div>
