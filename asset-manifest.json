@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/shopping_cart_react_redux/static/css/main.fa01c055.css",
+    "main.js": "/shopping_cart_react_redux/static/js/main.81de9a9f.js",
+    "static/media/backpack-3.jpg": "/shopping_cart_react_redux/static/media/backpack-3.8c4d20f4b41181cf7576.jpg",
+    "static/media/sneakers-3.jpg": "/shopping_cart_react_redux/static/media/sneakers-3.f6700f0bde15eb392081.jpg",
+    "static/media/backpack-1.jpg": "/shopping_cart_react_redux/static/media/backpack-1.4b31d83114f7b92b9375.jpg",
+    "static/media/watch-3.jpg": "/shopping_cart_react_redux/static/media/watch-3.a54fb78a9193d62ac4b8.jpg",
+    "static/media/sneakers-1.jpg": "/shopping_cart_react_redux/static/media/sneakers-1.6d9883dcff22bfa825d2.jpg",
+    "static/media/watch-1.jpg": "/shopping_cart_react_redux/static/media/watch-1.646cb07d008723ad6e42.jpg",
+    "static/media/backpack-2.jpg": "/shopping_cart_react_redux/static/media/backpack-2.e2acb02ac3ff28c80787.jpg",
+    "static/media/watch-2.jpg": "/shopping_cart_react_redux/static/media/watch-2.627baf27c05757e3cd07.jpg",
+    "static/media/camera-3.jpg": "/shopping_cart_react_redux/static/media/camera-3.baf95fb15052d032cdd2.jpg",
+    "static/media/sneakers-2.jpg": "/shopping_cart_react_redux/static/media/sneakers-2.42f4cc5f998436364933.jpg",
+    "static/media/camera-1.jpg": "/shopping_cart_react_redux/static/media/camera-1.ae76d86ade4925094b33.jpg",
+    "static/media/camera-2.jpg": "/shopping_cart_react_redux/static/media/camera-2.60e3a8e90128033e4166.jpg",
+    "index.html": "/shopping_cart_react_redux/index.html",
+    "main.fa01c055.css.map": "/shopping_cart_react_redux/static/css/main.fa01c055.css.map",
+    "main.81de9a9f.js.map": "/shopping_cart_react_redux/static/js/main.81de9a9f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa01c055.css",
+    "static/js/main.81de9a9f.js"
+  ]
+}
